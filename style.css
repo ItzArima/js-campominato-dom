@@ -14,3 +14,11 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+#conbomba{
+    background-color: white;
+}
+
+#show{
+    background-color: red;
+}
