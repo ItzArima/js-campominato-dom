@@ -9,11 +9,23 @@
 </head>
 <body>
     <main>
-        <button onclick="facile()">Facile</button>
-        <button onclick="medio()">Medio</button>
-        <button onclick="difficile()">Difficile</button>
-        <button id="genera">genera bombe</button>
-        <div id="game" class="game-container"></div>
+        <div class="main-container">
+            <div class="left-container">
+                <div id="button-container">
+                    <div class="level-buttons">
+                        <button onclick="facile()">Facile</button>
+                        <button onclick="medio()">Medio</button>
+                        <button onclick="difficile()">Difficile</button>
+                    </div>    
+                    <button id="genera">genera bombe</button>
+                    <button onclick="refresh()" id="reload">riavvia la pagina</button>
+                </div>
+                <div class="points">
+
+                </div>    
+            </div>    
+            <div id="game" class="game-container"></div>
+        </div>    
     </main>
     <script src="main.js"></script>
 </body>
