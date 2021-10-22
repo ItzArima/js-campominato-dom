@@ -49,16 +49,13 @@ function game(gamemode,width){
             }
             console.log(bombs);
             for(let i1=0;i1<gamemode;i1++){
-                document.getElementById(i1).addEventListener('click', function green(){            //click su cella safe
+                document.getElementById(i1).addEventListener('click', function green(){          //click su cella safe
                     if(counter == 0){
-                        if(this.style.backgroundColor == "green"){
-
-                        }
-                        else{
+                        if(this.style.backgroundColor !== "green"){
                             this.style.backgroundColor = "green";
                             points++;
                             document.querySelector(".points").innerHTML = points + " Points";
-                        }    
+                        }
                     }    
                 })
                 var seleziona = document.getElementsByClassName("blocco");
@@ -69,30 +66,28 @@ function game(gamemode,width){
                             conBomba.id="conbomba";  
                             conbombaid = conBomba.id;    
                             conBomba.addEventListener('click',function red(){
+                                
                                 if(counter == 0){
                                     this.style.backgroundColor = "red";
                                     points--;
                                     console.log(points+ " punti");
                                     document.querySelector(".points").innerHTML = points + " Points";
-                                    alert("hai perso");                           
+                                    alert("hai perso, Riavvia la pagina per ricominciare");                           
                                     for(i3=0;i3<16;i3++){
                                         var changeid = document.getElementById("conbomba");
                                         changeid.id = "show";                              
                                     }
-                                    counter++;
+                                    counter = 1;
                                     console.log(counter);
-                                    document.getElementById("reload").style.visibility = "visible";
                                 }    
                             })                 
                         }                 
                     }
                 }
             }     
+        }
+        else {
+            alert("Riavvia la pagina");
         }  
     })   
 }   
-
-function refresh(){
-    location.reload();
-}
-    
